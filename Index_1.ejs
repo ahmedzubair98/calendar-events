@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY CALENDAR APP</title>
+</head>
+<body>
+
+  <% if(events.length != 0) { %>
+    <ul class="Events">
+      <% for (var i = 0; i < events.length; i++) { %>
+        <% var event = events[i]; %>
+        <% var start = event.start.dateTime || event.start.date; %>
+        <li class = "event">
+	  <span> <%= start %></span>
+	  <span><%= ' - ' %></span>
+	  <span><%= event.summary %></span>
+        </li>
+       <% } %>
+    </ul>
+  <% } %>
+  <% if(events.length == 0) { %>
+    <p>No upcoming event found.</p>  
+  <% } %>
+  
+
+</body>
+</html>
